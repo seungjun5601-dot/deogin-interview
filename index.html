@@ -53,10 +53,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans
 .panel h2{font-size:17px;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
 .panel h2 .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;}
 
-.field{margin-bottom:1.1rem;}
+.field{margin-bottom:.9rem;}
 .field:last-child{margin-bottom:0;}
 label.lab{display:block;font-size:14px;font-weight:600;color:var(--text2);margin-bottom:6px;}
 label.lab .hint{font-weight:400;color:var(--text3);font-size:12.5px;margin-left:4px;}
+.row label.lab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 input[type=text],input[type=password],select,textarea{
   width:100%;padding:11px 13px;font-size:15.5px;font-family:inherit;
@@ -65,7 +66,7 @@ input[type=text],input[type=password],select,textarea{
 }
 input:focus,select:focus,textarea:focus{border-color:var(--accent);}
 textarea{resize:vertical;line-height:1.7;}
-textarea#sgb{min-height:230px;}
+textarea#sgb{min-height:200px;}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
 @media(max-width:520px){.row{grid-template-columns:1fr;}}
 
@@ -194,7 +195,7 @@ details.t2ans .t2text{margin-top:.5rem;}
 
       <div class="row">
         <div class="field">
-          <label class="lab" for="field">관심 계열 <span class="hint">아직 미정이면 미정</span></label>
+          <label class="lab" for="field">관심 계열 <span class="hint">(미정 가능)</span></label>
           <select id="field">
             <option value="">미정 / 전체</option>
             <option>인문·사회</option>
@@ -206,13 +207,13 @@ details.t2ans .t2text{margin-top:.5rem;}
           </select>
         </div>
         <div class="field">
-          <label class="lab" for="dept">관심 분야 / 희망 학과 <span class="hint">선택 — 있으면 입력</span></label>
-          <input type="text" id="dept" placeholder="예) 화학공학, 심리학, 간호, 초등교육 (없으면 비워두세요)">
+          <label class="lab" for="dept">관심 분야 / 희망 학과 <span class="hint">(선택)</span></label>
+          <input type="text" id="dept" placeholder="예) 화학공학, 심리학, 간호">
         </div>
       </div>
 
       <div class="field">
-        <label class="lab" for="univ">지원 대학 <span class="hint">선택 — 목표 대학이 정해진 경우에만</span></label>
+        <label class="lab" for="univ">지원 대학 <span class="hint">(선택 — 목표 대학이 정해졌을 때만)</span></label>
         <input type="text" id="univ" list="univlist" placeholder="대부분 비워둡니다. 정해졌다면 입력 (예: 가톨릭대학교)" autocomplete="off">
         <datalist id="univlist"></datalist>
       </div>
@@ -234,7 +235,7 @@ details.t2ans .t2text{margin-top:.5rem;}
           </select>
         </div>
         <div class="field">
-          <label class="lab" for="grade">보유 생기부 범위 <span class="hint">없는 학년은 안 묻게</span></label>
+          <label class="lab" for="grade">보유 생기부 범위 <span class="hint">(보유 학년만)</span></label>
           <select id="grade">
             <option value="1학년">1학년만</option>
             <option value="1~2학년">1~2학년</option>
@@ -257,8 +258,12 @@ details.t2ans .t2text{margin-top:.5rem;}
       <p style="font-size:14.5px;line-height:1.65;color:var(--text2);">아래 버튼을 누르면 <b>생기부·근거문항·평가원칙이 모두 담긴 완성형 프롬프트</b>가 만들어집니다. 복사해서 <b>무료</b> ChatGPT·Claude·Gemini 등에 붙여넣으면 문항과 답변 설계 가이드가 나옵니다.</p>
 
       <div class="note free-note">
-        <b>✓ 이 도구는 어떤 비용도 발생하지 않습니다.</b> 결제·API 키·로그인 없이 동작하며, 프롬프트를 만들 뿐 외부 유료 서비스를 호출하지 않습니다.<br>
-        <b>✓ 개인정보:</b> 입력 내용은 <b>이 브라우저 안에서만</b> 처리되며 어디에도 전송되지 않습니다. 완성된 프롬프트를 외부 AI에 직접 붙여넣을 때만 해당 서비스로 전송되니, 학생 실명·연락처 등은 빼고 사용하세요.
+        <b>✓ 비용 없음</b> — 결제·API 키·로그인 없이 동작하며, 외부 유료 서비스를 호출하지 않습니다.<br>
+        <b>✓ 개인정보</b> — 입력 내용은 이 브라우저 안에서만 처리되고 어디에도 저장·전송되지 않습니다.
+      </div>
+      <div class="note" style="border-color:var(--amber);background:var(--amberbg);color:var(--text);">
+        <b style="color:var(--amber);">⚠ 외부 AI에서는 반드시 "임시 채팅(Temporary Chat)"으로 작업하세요.</b><br>
+        대화가 저장·학습에 사용되지 않습니다. 또한 붙여넣기 전에 <b>학생 이름·학번·연락처</b>는 빼고, 생기부 <b>내용만</b> 사용하세요.
       </div>
 
       <div style="margin-top:1rem;">
@@ -503,7 +508,7 @@ function showPrompt(prompt){
       </div>
     </div>
     <textarea id="promptBox" readonly></textarea>
-    <div class="note">이 프롬프트를 복사해 무료 AI 채팅(ChatGPT·Claude·Gemini 등)에 붙여넣으세요. 결과가 마음에 들지 않으면 "더 어렵게/쉽게", "○○역량 위주로" 같이 이어서 요청하면 됩니다.</div>`;
+    <div class="note" style="border-color:var(--amber);background:var(--amberbg);color:var(--text);"><b style="color:var(--amber);">⚠ 반드시 각 AI의 "임시 채팅(Temporary Chat)"에 붙여넣으세요.</b> (학생 이름·학번은 빼고) 결과가 마음에 들지 않으면 "더 어렵게/쉽게", "○○역량 위주로" 같이 이어서 요청하면 됩니다.</div>`;
   document.getElementById('promptBox').value=prompt;
   document.getElementById('copyBtn').onclick=()=>{navigator.clipboard.writeText(prompt).then(()=>toast('복사됐습니다!'));};
   document.getElementById('cgptBtn').onclick=()=>{navigator.clipboard.writeText(prompt).then(()=>{toast('복사 후 ChatGPT를 엽니다');window.open('https://chatgpt.com/','_blank');});};
