@@ -25,7 +25,7 @@
   --amber:#e8a050;--amberbg:#2e1a00;
   --danger:#f08585;
 }}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;line-height:1.6;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh;line-height:1.65;font-size:15.5px;}
 
 .wrap{max-width:1100px;margin:0 auto;padding:0 1rem 4rem;}
 
@@ -34,9 +34,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans
 .site-header .inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.15rem;}
 .school-logo{height:64px;width:auto;flex-shrink:0;filter:drop-shadow(0 1px 3px rgba(0,0,0,.25));}
 .head-text{min-width:0;}
-.head-text .eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.03em;color:#a8c6f0;margin:0;}
-.head-text h1{font-size:23px;font-weight:800;color:#fff;margin:3px 0 5px;letter-spacing:-.01em;line-height:1.2;}
-.head-text .sub{font-size:12.5px;color:#cfddf2;margin:0;line-height:1.5;}
+.head-text .eyebrow{font-size:14px;font-weight:600;letter-spacing:.03em;color:#a8c6f0;margin:0;}
+.head-text h1{font-size:26px;font-weight:800;color:#fff;margin:4px 0 6px;letter-spacing:-.01em;line-height:1.25;}
+.head-text .sub{font-size:14.5px;color:#cfddf2;margin:0;line-height:1.55;}
 .site-header .src{max-width:1100px;margin:1rem auto 0;font-size:11px;color:#9fb6d6;line-height:1.55;border-top:.5px solid rgba(255,255,255,.14);padding-top:.7rem;}
 .site-header .src b{color:#fff;font-weight:700;}
 @media(max-width:560px){
@@ -49,69 +49,69 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans KR',sans
 .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:start;}
 @media(max-width:900px){.grid{grid-template-columns:1fr;}}
 
-.panel{background:var(--bg);border:.5px solid var(--border);border-radius:var(--radius-lg);padding:1.1rem 1.2rem;}
-.panel h2{font-size:14px;font-weight:700;margin-bottom:.9rem;display:flex;align-items:center;gap:7px;}
-.panel h2 .n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;}
+.panel{background:var(--bg);border:.5px solid var(--border);border-radius:var(--radius-lg);padding:1.2rem 1.35rem;}
+.panel h2{font-size:17px;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.panel h2 .n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;}
 
-.field{margin-bottom:.95rem;}
+.field{margin-bottom:1.1rem;}
 .field:last-child{margin-bottom:0;}
-label.lab{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:5px;}
-label.lab .hint{font-weight:400;color:var(--text3);font-size:11px;margin-left:4px;}
+label.lab{display:block;font-size:14px;font-weight:600;color:var(--text2);margin-bottom:6px;}
+label.lab .hint{font-weight:400;color:var(--text3);font-size:12.5px;margin-left:4px;}
 
 input[type=text],input[type=password],select,textarea{
-  width:100%;padding:9px 11px;font-size:13.5px;font-family:inherit;
+  width:100%;padding:11px 13px;font-size:15.5px;font-family:inherit;
   border:.5px solid var(--border2);border-radius:var(--radius);
   background:var(--bg2);color:var(--text);outline:none;transition:border-color .15s;
 }
 input:focus,select:focus,textarea:focus{border-color:var(--accent);}
-textarea{resize:vertical;line-height:1.65;}
+textarea{resize:vertical;line-height:1.7;}
 textarea#sgb{min-height:230px;}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
 @media(max-width:520px){.row{grid-template-columns:1fr;}}
 
-.chips{display:flex;flex-wrap:wrap;gap:7px;}
-.chip{font-size:12.5px;padding:6px 12px;border-radius:20px;border:.5px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;user-select:none;transition:all .12s;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{font-size:14.5px;padding:8px 15px;border-radius:20px;border:.5px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;user-select:none;transition:all .12s;}
 .chip.on{background:var(--accentbg);color:var(--accent);border-color:var(--accent);font-weight:600;}
 .chip.g.on{background:var(--greenbg);color:var(--green);border-color:var(--green);}
 .chip.a.on{background:var(--amberbg);color:var(--amber);border-color:var(--amber);}
 
 .seg{display:flex;border:.5px solid var(--border2);border-radius:var(--radius);overflow:hidden;}
-.seg button{flex:1;padding:8px 6px;font-size:12.5px;font-family:inherit;background:transparent;color:var(--text2);border:none;border-right:.5px solid var(--border2);cursor:pointer;transition:all .12s;}
+.seg button{flex:1;padding:11px 8px;font-size:14.5px;font-family:inherit;background:transparent;color:var(--text2);border:none;border-right:.5px solid var(--border2);cursor:pointer;transition:all .12s;line-height:1.35;}
 .seg button:last-child{border-right:none;}
 .seg button.on{background:var(--accent);color:#fff;font-weight:600;}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:12px;font-size:14px;font-weight:700;font-family:inherit;border:none;border-radius:var(--radius);background:var(--accent);color:#fff;cursor:pointer;transition:filter .12s;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:14px;font-size:16.5px;font-weight:700;font-family:inherit;border:none;border-radius:var(--radius);background:var(--accent);color:#fff;cursor:pointer;transition:filter .12s;}
 .btn:hover{filter:brightness(1.07);}
 .btn:disabled{opacity:.5;cursor:not-allowed;}
 .btn.ghost{background:transparent;color:var(--text2);border:.5px solid var(--border2);font-weight:600;}
-.btn.sm{padding:7px 12px;font-size:12px;width:auto;}
+.btn.sm{padding:9px 15px;font-size:13.5px;width:auto;}
 
-.note{font-size:11.5px;color:var(--text3);line-height:1.5;margin-top:.7rem;padding:.6rem .75rem;background:var(--bg2);border-radius:var(--radius);border:.5px solid var(--border);}
+.note{font-size:13.5px;color:var(--text3);line-height:1.6;margin-top:.8rem;padding:.75rem .9rem;background:var(--bg2);border-radius:var(--radius);border:.5px solid var(--border);}
 .note b{color:var(--text2);}
 
 details.ref{margin-top:.6rem;border:.5px solid var(--border);border-radius:var(--radius);background:var(--bg2);}
-details.ref summary{cursor:pointer;padding:9px 12px;font-size:12.5px;font-weight:600;color:var(--text2);list-style:none;}
+details.ref summary{cursor:pointer;padding:11px 14px;font-size:14px;font-weight:600;color:var(--text2);list-style:none;}
 details.ref summary::-webkit-details-marker{display:none;}
 details.ref summary::before{content:'▸ ';color:var(--text3);}
 details.ref[open] summary::before{content:'▾ ';}
 .ref-body{padding:0 12px 12px;display:flex;flex-direction:column;gap:7px;}
-.ref-q{font-size:12px;line-height:1.55;color:var(--text);padding:7px 10px;background:var(--bg);border-radius:6px;border:.5px solid var(--border);}
-.ref-q .tag{font-size:10.5px;font-weight:600;color:var(--accent);margin-right:6px;}
+.ref-q{font-size:14px;line-height:1.65;color:var(--text);padding:9px 12px;background:var(--bg);border-radius:6px;border:.5px solid var(--border);}
+.ref-q .tag{font-size:12px;font-weight:600;color:var(--accent);margin-right:6px;}
 .ref-q.cross{opacity:.82;}
 .ref-q.cross .tag{color:var(--text3);}
-.ref-note{font-size:11.5px;line-height:1.5;color:var(--amber);background:var(--amberbg);border:.5px solid var(--amber);border-radius:6px;padding:8px 10px;}
+.ref-note{font-size:13.5px;line-height:1.6;color:var(--amber);background:var(--amberbg);border:.5px solid var(--amber);border-radius:6px;padding:10px 12px;}
 .ref-note b{color:var(--amber);}
 
 /* OUTPUT */
 #out{margin-top:1.25rem;}
 .out-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.7rem;flex-wrap:wrap;}
-.out-head h2{font-size:15px;font-weight:700;}
+.out-head h2{font-size:18px;font-weight:700;}
 .out-actions{display:flex;gap:.5rem;flex-wrap:wrap;}
-#promptBox{width:100%;min-height:320px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.6;white-space:pre-wrap;}
-.result{background:var(--bg);border:.5px solid var(--border);border-radius:var(--radius-lg);padding:1.3rem 1.5rem;font-size:14px;}
-.result h2{font-size:17px;margin:1.4rem 0 .6rem;padding-bottom:.3rem;border-bottom:.5px solid var(--border);}
+#promptBox{width:100%;min-height:340px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.7;white-space:pre-wrap;}
+.result{background:var(--bg);border:.5px solid var(--border);border-radius:var(--radius-lg);padding:1.4rem 1.6rem;font-size:15.5px;line-height:1.75;}
+.result h2{font-size:19px;margin:1.5rem 0 .7rem;padding-bottom:.3rem;border-bottom:.5px solid var(--border);}
 .result h2:first-child{margin-top:0;}
-.result h3{font-size:14.5px;margin:1.1rem 0 .4rem;color:var(--accent);}
+.result h3{font-size:16px;margin:1.2rem 0 .45rem;color:var(--accent);}
 .result strong{color:var(--text);}
 .result p{margin:.4rem 0;}
 .result ul,.result ol{margin:.4rem 0 .4rem 1.3rem;}
@@ -125,11 +125,11 @@ details.ref[open] summary::before{content:'▾ ';}
 .free-tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;background:var(--greenbg);color:var(--green);}
 .free-note{border-color:var(--green)!important;background:var(--greenbg)!important;color:var(--text)!important;}
 .free-note b{color:var(--green);}
-.footer{text-align:center;font-size:11px;color:var(--text3);margin-top:2.5rem;line-height:1.7;}
+.footer{text-align:center;font-size:13px;color:var(--text3);margin-top:2.5rem;line-height:1.7;}
 
 /* TABS */
 .tabbar{display:flex;gap:6px;margin-bottom:1.1rem;border-bottom:1.5px solid var(--border);}
-.tabbar .tab{padding:11px 18px;font-size:14px;font-weight:700;font-family:inherit;background:transparent;color:var(--text3);border:none;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;cursor:pointer;transition:all .12s;}
+.tabbar .tab{padding:12px 20px;font-size:16px;font-weight:700;font-family:inherit;background:transparent;color:var(--text3);border:none;border-bottom:2.5px solid transparent;margin-bottom:-1.5px;cursor:pointer;transition:all .12s;}
 .tabbar .tab:hover{color:var(--text2);}
 .tabbar .tab.on{color:var(--accent);border-bottom-color:var(--accent);}
 .tabpane[hidden]{display:none;}
@@ -173,7 +173,6 @@ details.t2ans .t2text{margin-top:.5rem;}
       <p class="sub">학생 생활기록부를 붙여넣고 관심 계열·분야를 고르면, 학생부종합전형 면접 문항과 답변 설계 가이드를 만들어 줍니다.</p>
     </div>
   </div>
-  <p class="src">근거 자료: 선행학습영향평가 공개문항 · 인천/울산/전남 면접 자료집 등 <b id="qcount">0</b>개 기출(대학별·서류) · 충북진협 제시문 기출 · 경기진협 의치한약수 MMI · 서울대 역량평가 면접 원칙 · 진로진학상담 연수(생기부 분석)</p>
 </header>
 
 <div class="wrap">
@@ -245,9 +244,9 @@ details.t2ans .t2text{margin-top:.5rem;}
       </div>
 
       <div class="field" style="display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
-        <label style="font-size:12.5px;display:flex;gap:6px;align-items:center;cursor:pointer;"><input type="checkbox" id="incAns" checked> 답변 설계 가이드 포함</label>
-        <label style="font-size:12.5px;display:flex;gap:6px;align-items:center;cursor:pointer;"><input type="checkbox" id="incTail" checked> 꼬리질문 포함</label>
-        <label style="font-size:12.5px;display:flex;gap:6px;align-items:center;cursor:pointer;"><input type="checkbox" id="incLast" checked> 마무리 질문 포함</label>
+        <label style="font-size:14.5px;display:flex;gap:7px;align-items:center;cursor:pointer;"><input type="checkbox" id="incAns" checked style="width:17px;height:17px;"> 답변 설계 가이드 포함</label>
+        <label style="font-size:14.5px;display:flex;gap:7px;align-items:center;cursor:pointer;"><input type="checkbox" id="incTail" checked style="width:17px;height:17px;"> 꼬리질문 포함</label>
+        <label style="font-size:14.5px;display:flex;gap:7px;align-items:center;cursor:pointer;"><input type="checkbox" id="incLast" checked style="width:17px;height:17px;"> 마무리 질문 포함</label>
       </div>
     </section>
 
@@ -255,7 +254,7 @@ details.t2ans .t2text{margin-top:.5rem;}
     <section class="panel">
       <h2><span class="n">2</span>프롬프트 생성 <span class="free-tag">100% 무료 · 비용 없음</span></h2>
 
-      <p style="font-size:12.5px;color:var(--text2);">아래 버튼을 누르면 <b>생기부·근거문항·평가원칙이 모두 담긴 완성형 프롬프트</b>가 만들어집니다. 복사해서 <b>무료</b> ChatGPT·Claude·Gemini 등에 붙여넣으면 문항과 모범답안이 나옵니다.</p>
+      <p style="font-size:14.5px;line-height:1.65;color:var(--text2);">아래 버튼을 누르면 <b>생기부·근거문항·평가원칙이 모두 담긴 완성형 프롬프트</b>가 만들어집니다. 복사해서 <b>무료</b> ChatGPT·Claude·Gemini 등에 붙여넣으면 문항과 답변 설계 가이드가 나옵니다.</p>
 
       <div class="note free-note">
         <b>✓ 이 도구는 어떤 비용도 발생하지 않습니다.</b> 결제·API 키·로그인 없이 동작하며, 프롬프트를 만들 뿐 외부 유료 서비스를 호출하지 않습니다.<br>
@@ -281,7 +280,7 @@ details.t2ans .t2text{margin-top:.5rem;}
   <section id="tab2" class="tabpane" hidden>
     <div class="panel">
       <h2><span class="n">2</span>제시문·MMI 기출 열람 <span class="free-tag">연습용 기출</span></h2>
-      <p style="font-size:12.5px;color:var(--text2);">제시문·MMI 면접은 생기부로 새로 만들기보다 <b>실제 기출을 분석·연습</b>하는 것이 효과적입니다. 아래에서 유형을 골라 대학·영역별 기출을 펼쳐보세요.</p>
+      <p style="font-size:14.5px;line-height:1.65;color:var(--text2);">제시문·MMI 면접은 생기부로 새로 만들기보다 <b>실제 기출을 분석·연습</b>하는 것이 효과적입니다. 아래에서 유형을 골라 대학·영역별 기출을 펼쳐보세요.</p>
       <div class="seg" id="t2seg" style="margin-top:.9rem;">
         <button data-v="jemun" class="on">제시문 기출 (대학별)</button>
         <button data-v="mmi">MMI 연습 (의·치·한·약·수)</button>
@@ -292,11 +291,6 @@ details.t2ans .t2text{margin-top:.5rem;}
   </section>
 
   <div class="footer">
-    근거: 2024–2026 선행학습영향평가 결과보고서 공개 면접 문항(TEAM 진심: 와우고 서기남·송현제, 오남고 이지희, 향일고 김기정, 새솔고 김태진) ·
-    2026 서울대학교 대입정책포럼 SNU 학생부 기반 역량평가 면접 자료 ·
-    2025 진로진학상담협력교사 역량강화 연수(생기부 분석 모의면접 문항개발) ·
-    충북진협 제시문 면접 분석 자료집 · 경기진협 의치한약수 의학계열 모의면접 자료집 · 인천 구술면접 자료집 ·
-    울산/전남교육청 대입 면접 자료집.<br>
     본 도구는 교사 면접지도 보조용입니다. 생성 결과는 반드시 교사가 검토·보정하여 사용하세요.
   </div>
 </div>
@@ -321,7 +315,7 @@ const COMP_DETAIL = {
 const state = { comps:new Set(["학업역량","진로역량","공동체역량"]) };
 
 /* ---------- 초기화 ---------- */
-document.getElementById('qcount').textContent = QBANK.length.toLocaleString();
+{const _qc=document.getElementById('qcount'); if(_qc) _qc.textContent = QBANK.length.toLocaleString();}
 (function initUnivs(){
   const us=(typeof ALLUNIV!=='undefined'?ALLUNIV.slice():[...new Set(QBANK.map(d=>d.u))]).sort((a,b)=>a.localeCompare(b,'ko'));
   const dl=document.getElementById('univlist');
