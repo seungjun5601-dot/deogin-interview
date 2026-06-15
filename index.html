@@ -356,10 +356,20 @@ function deptHit(d, kws){
 }
 function isNoPub(univ){ return univ && NOPUB_SET.has(univ.replace(/\s/g,'')); }
 
+// 관심 계열 → 대표 키워드(질문 본문 매칭용). 단어 길이 2자 이상의 구체 키워드만 사용.
+const FIELD_KW = {
+  "인문·사회":["인문","사회","역사","철학","문학","언어","정치","행정","심리","미디어","신문","방송","문헌","지리","윤리","사학"],
+  "상경·경영":["경영","경제","회계","무역","금융","마케팅","통상","상경","빅데이터"],
+  "자연·공학":["공학","물리","화학","생명과학","수학","컴퓨터","기계","전자","건축","신소재","에너지","코딩","프로그래밍","반도체","통계","천문","지구과학","환경","로봇","알고리즘"],
+  "의약·생명·간호":["의예","의학","약학","간호","보건","의생명","수의","한의","치의","임상","생명과학","질병","의료"],
+  "교육(사범·교대)":["교육","사범","초등","유아","교직","교사","아동"],
+  "예체능":["미술","음악","체육","디자인","무용","연기","예술","스포츠","실기","작곡","회화","조형"]
+};
+
 // 각 질문(개별)을 우선순위에 따라 모음. scope: univ(해당대학) / dept(타대학·동일계열) / comp(타대학·동일역량)
-function matchQuestions(univ, comps, dept, limit){
+function matchQuestions(univ, comps, dept, limit, field){
   const norm=u=>(u||'').replace(/\s/g,'');
-  const kws=deptKeywords(dept);
+  const kws=[...new Set(deptKeywords(dept).concat(FIELD_KW[field]||[]))];
   const uKey=norm(univ);
   const inComp=d=> comps.size===0 ? true : (comps.has(d.comp) || d.comp==='종합/기타');
   const inCompStrict=d=> comps.size===0 ? true : comps.has(d.comp);
@@ -386,7 +396,8 @@ function matchQuestions(univ, comps, dept, limit){
 function refreshRef(){
   const univ=document.getElementById('univ').value.trim();
   const dept=document.getElementById('dept').value.trim();
-  const ms=matchQuestions(univ, state.comps, dept, 12);
+  const field=document.getElementById('field').value;
+  const ms=matchQuestions(univ, state.comps, dept, 12, field);
   const body=document.getElementById('refBody');
   document.getElementById('refCount').textContent = `(근거 ${ms.length}개)`;
   let head='';
@@ -402,6 +413,7 @@ function refreshRef(){
 }
 document.getElementById('univ').addEventListener('input',refreshRef);
 document.getElementById('dept').addEventListener('input',refreshRef);
+document.getElementById('field').addEventListener('change',refreshRef);
 
 /* ---------- 프롬프트 빌드 ---------- */
 function buildPrompt(){
@@ -417,7 +429,7 @@ function buildPrompt(){
   const comps=[...state.comps];
   const compLines=comps.map(c=>`  - ${c}: ${COMP_DETAIL[c]}`).join('\n');
 
-  const ex=matchQuestions(document.getElementById('univ').value.trim(), state.comps, document.getElementById('dept').value.trim(), 10);
+  const ex=matchQuestions(document.getElementById('univ').value.trim(), state.comps, document.getElementById('dept').value.trim(), 10, field);
   const examples=ex.map((m,i)=>{
     const tag=m.scope!=='univ'?`타대학·${m.u}·${m.comp}`:`${m.u}·${m.comp}`;
     return `  ${i+1}. [${tag}] ${m.q}`;
